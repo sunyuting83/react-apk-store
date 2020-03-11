@@ -33,7 +33,13 @@ export function register(config) {
 
     window.addEventListener('load', () => {
       const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
-
+      if (isNotPwa()) {
+        console.info('unregistering service worker for admin route')
+        unregister()
+        console.info('reloading')
+        window.location.reload()
+        return false
+      }
       if (isLocalhost) {
         // This is running on localhost. Let's check if a service worker still exists or not.
         checkValidServiceWorker(swUrl, config);
@@ -52,6 +58,11 @@ export function register(config) {
       }
     });
   }
+}
+
+function isNotPwa() {
+  const blacklist = ['api','manage'].filter( r => window.location.pathname.startsWith(r));
+  return blacklist.length > 0
 }
 
 function registerValidSW(swUrl, config) {

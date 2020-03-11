@@ -5,7 +5,7 @@ import axios from "axios";
 // vue中使用element-ui 此处自定义
 // import { Loading} from "element-ui";
 
-var rooturl = 'http://apk.kindlesend.com/api';
+var rooturl = 'https://apk.kindlesend.com/api';
 // var rooturl = 'http://127.0.0.1:3200/api';
 // 创建axios默认请求
 axios.defaults.baseURL = rooturl;
