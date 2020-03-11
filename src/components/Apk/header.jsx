@@ -22,7 +22,7 @@ class Header extends Component {
                         游戏
                     </NavLink>
                     <NavLink to='/classify' className="item-nav">分类</NavLink>
-                    <Link to='/search' className="search"><i className="fa fa-search"></i></Link>
+                    <NavLink to='/search' className="search"><i className="fa fa-search"></i></NavLink>
                 </div>
             </header>
         );
